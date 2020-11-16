@@ -3,7 +3,9 @@ import { Routes, RouterModule } from '@angular/router';
 import { AboutComponent } from './about/about.component';
 import { CategoriesComponent } from './categories/categories.component';
 import { ContactComponent } from './contact/contact.component';
+import { AuthGuard } from './guards/auth.guard';
 import { HomeComponent } from './home/home.component';
+import { LogInComponent } from './log-in/log-in.component';
 import { ProductComponent } from './product/product.component';
 
 const routes: Routes = [
@@ -19,6 +21,10 @@ const routes: Routes = [
   //   component: HomeComponent
   // },
   {
+    path: 'login',
+    component: LogInComponent
+  },
+  {
     path: 'about',
     component: AboutComponent,
   },
@@ -32,7 +38,8 @@ const routes: Routes = [
   },
   {
     path: 'categories',
-    component: CategoriesComponent
+    component: CategoriesComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'product/:id',

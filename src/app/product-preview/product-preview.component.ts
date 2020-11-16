@@ -12,7 +12,7 @@ export class ProductPreviewComponent implements OnInit, OnChanges {
   constructor() { }
 
   ngOnInit(): void {
-
+    
   }
 
   ngOnChanges(changes: SimpleChanges) {

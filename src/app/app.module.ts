@@ -11,6 +11,13 @@ import { HomeComponent } from './home/home.component';
 import { CategoriesComponent } from './categories/categories.component';
 import { ProductComponent } from './product/product.component';
 import { ProductPreviewComponent } from './product-preview/product-preview.component';
+import { LogInComponent } from './log-in/log-in.component';
+import { TestPipe } from './pipes/test.pipe';
+import { TruncatePipe } from './pipes/truncate.pipe';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
 
 @NgModule({
   declarations: [
@@ -22,11 +29,18 @@ import { ProductPreviewComponent } from './product-preview/product-preview.compo
     HomeComponent,
     CategoriesComponent,
     ProductComponent,
-    ProductPreviewComponent
+    ProductPreviewComponent,
+    LogInComponent,
+    TestPipe,
+    TruncatePipe
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]

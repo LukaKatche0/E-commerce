@@ -1,6 +1,10 @@
-<nav>
+<nav style="display: flex; justify-content: space-between;">
     <a [routerLink]="['home']" routerLinkActive="active">Home</a>
     <a [routerLink]="['categories']" routerLinkActive="active">Categories</a>
     <a [routerLink]="['about']" routerLinkActive="active">About</a>
     <a [routerLink]="['contact']" routerLinkActive="active">Contact</a>
+    <a [routerLink]="['login']" routerLinkActive="active">Login</a>
 </nav>
+<!-- 
+შევქმნათ ახალი guard, რომელიც იფუნქციონირებს login-ის route-ზე, თუ user დალოგინებულია
+მაგ შემთხვევაში გადაიყვანს მთავარ ფეიჯზე, თუ არადა მაშინ დატოვებს. -->
