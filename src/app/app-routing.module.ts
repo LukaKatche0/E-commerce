@@ -7,6 +7,7 @@ import { AuthGuard } from './guards/auth.guard';
 import { HomeComponent } from './home/home.component';
 import { LogInComponent } from './log-in/log-in.component';
 import { ProductComponent } from './product/product.component';
+import { SignUpComponent } from './sign-up/sign-up.component';
 
 const routes: Routes = [
   // ავტომატურად დაა-redirect-ოს home-ზე
@@ -23,6 +24,10 @@ const routes: Routes = [
   {
     path: 'login',
     component: LogInComponent
+  },
+  {
+    path: 'signup',
+    component: SignUpComponent
   },
   {
     path: 'about',
