@@ -1,0 +1,38 @@
+<form [formGroup]="addProductForm" (ngSubmit)="onSubmit()">
+    <div>
+        <mat-form-field appearance="fill">
+            <mat-label>Title</mat-label>
+            <input matInput type="text" formControlName="title">
+            <mat-error *ngIf="addProductForm.get('title').invalid">title invalid</mat-error>
+        </mat-form-field>
+    </div>
+    <div>
+        <mat-form-field appearance="fill">
+            <mat-label>Price</mat-label>
+            <input matInput type="number" formControlName="price">
+            <mat-error *ngIf="addProductForm.get('price').invalid">price invalid</mat-error>
+        </mat-form-field>
+    </div>
+    <div>
+        <mat-form-field appearance="fill">
+            <mat-label>Description</mat-label>
+            <textarea matInput formControlName="description"></textarea>
+            <mat-error *ngIf="addProductForm.get('description').invalid">description invalid</mat-error>
+        </mat-form-field>
+    </div>
+    <div style="margin-bottom: 5px;">
+        <button mat-raised-button color="primary" type="button" (click)="addImage()">Add Image</button>
+    </div>
+    <div formArrayName="images">
+        <div *ngFor="let image of getImages(); let i = index" style="margin-top: 5px;">
+            <mat-form-field appearance="fill" class="img-field">
+                <mat-label>image</mat-label>
+                <input matInput type="text" [formControlName]="i">
+            </mat-form-field>
+            <mat-icon style="cursor: pointer;" (click)="deleteImage(i)">delete</mat-icon>
+        </div>
+    </div>
+    <div>
+        <button mat-raised-button color="primary" [disabled]="addProductForm.invalid">Add Product</button>
+    </div>
+</form>

@@ -1,4 +1,15 @@
-<p>title: {{productPreview.title}}</p>
-<p>price: {{productPreview.price}}</p>
-<p>description: {{productPreview.description}}</p>
-<p>NUMBER: {{number}}</p>
+<mat-card class="example-card">
+    <mat-card-header>
+        <mat-card-title>{{productPreview.title}}</mat-card-title>
+        <mat-card-subtitle>{{productPreview.price}}₾</mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image [src]="productPreview.images[0]">
+    <mat-card-content>
+        <p>
+           {{productPreview.description}}
+        </p>
+    </mat-card-content>
+    <mat-card-actions>
+        <a [routerLink]="['/product', productPreview.id]"><button mat-button>View Details</button></a>
+    </mat-card-actions>
+</mat-card>

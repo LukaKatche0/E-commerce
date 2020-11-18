@@ -8,7 +8,6 @@ import { ProductPreviewModel } from '../models/product-preview.model';
 })
 export class ProductPreviewComponent implements OnInit, OnChanges {
   @Input() productPreview: ProductPreviewModel;
-  @Input() number: number;
   constructor() { }
 
   ngOnInit(): void {
