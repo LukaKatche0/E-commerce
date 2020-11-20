@@ -3,5 +3,7 @@ export class ProductPreviewModel {
     title: string;
     images: Array<string>;
     price: number;
+    username: string;
+    userPhoneNumber: string;
     description: string;
 }

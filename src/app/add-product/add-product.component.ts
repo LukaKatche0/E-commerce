@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ProductPreviewModel } from '../models/product-preview.model';
+import { AuthService } from '../services/auth.service';
 import { ProductService } from '../services/product.service';
 
 @Component({
@@ -11,7 +12,7 @@ import { ProductService } from '../services/product.service';
 })
 export class AddProductComponent implements OnInit {
   addProductForm: FormGroup;
-  constructor(private productService: ProductService, private router: Router) { }
+  constructor(private productService: ProductService, private router: Router, private authService: AuthService) { }
 
   ngOnInit(): void {
     this.addProductForm = new FormGroup({
@@ -40,11 +41,14 @@ export class AddProductComponent implements OnInit {
   }
 
   onSubmit() {
+    const userInfo = this.authService.getUserInfo();
     const newProduct: ProductPreviewModel = {
       title: this.addProductForm.get('title').value,
       price: this.addProductForm.get('price').value,
       description: this.addProductForm.get('description').value,
-      images: this.addProductForm.get('images').value
+      images: this.addProductForm.get('images').value,
+      username: userInfo.username,
+      userPhoneNumber: userInfo.phoneNumber
     };
     this.productService.addProduct(newProduct)
     .subscribe((data) => {

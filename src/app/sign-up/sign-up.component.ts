@@ -17,6 +17,7 @@ export class SignUpComponent implements OnInit {
     this.signUpForm = new FormGroup({
       username: new FormControl(null, Validators.required),
       password: new FormControl(null, Validators.required),
+      phoneNumber: new FormControl(null, Validators.required)
       // hobbies: new FormArray([])
     });
   }
@@ -34,6 +35,7 @@ export class SignUpComponent implements OnInit {
     const newUser: UserModel = {
       username: this.signUpForm.get('username').value,
       password: this.signUpForm.get('password').value,
+      phoneNumber: this.signUpForm.get('phoneNumber').value,
       balance: 0
     };
     this.authService.signUp(newUser)
@@ -41,6 +43,7 @@ export class SignUpComponent implements OnInit {
       this.authService.logIn(newUserFromApi);
       this.router.navigate(['categories']);
       localStorage.setItem('token', newUserFromApi.password);
+      this.authService.shouldUpdateBalance.next();
     })
   }
 

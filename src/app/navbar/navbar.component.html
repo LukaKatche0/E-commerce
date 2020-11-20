@@ -133,10 +133,13 @@
             <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
                 <mat-icon>share</mat-icon>
             </button> -->
+            <span *ngIf="isUserLoggedIn()">{{balance}} GEL</span>
             <button mat-raised-button color="warn" class="loginbutton" [routerLink]="['login']"
-                routerLinkActive="active">Log In</button>
+                routerLinkActive="active" *ngIf="!isUserLoggedIn()" style="margin-left: 10px;">Log In</button>
             <button mat-raised-button color="warn" class="signupbutton" [routerLink]="['signup']"
-                routerLinkActive="active">Sign Up</button>
+                routerLinkActive="active" *ngIf="!isUserLoggedIn()">Sign Up</button>
+            <button mat-raised-button color="warn" class="signupbutton"
+                routerLinkActive="active" (click)="logOut()" style="margin-left: 10px;" *ngIf="isUserLoggedIn()">Log Out</button>
 
 
         </mat-toolbar>

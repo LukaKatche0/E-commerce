@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Subject } from 'rxjs';
 import { environment } from '../../environments/environment';
 import { UserModel } from '../models/user.model';
 
@@ -8,6 +9,7 @@ import { UserModel } from '../models/user.model';
 })
 export class AuthService {
   apiUrl = environment.apiUrl + '/users';
+  shouldUpdateBalance: Subject<void> = new Subject();
   constructor(private http: HttpClient) { }
 
   logIn(user: UserModel) {
@@ -15,11 +17,16 @@ export class AuthService {
     // return this.http.post<UserModel>(this.apiUrl, user);
   }
 
-  getUserInfo() {
+  getUserInfo(): UserModel {
     return JSON.parse(localStorage.getItem('user'));
   }
 
+  buyProduct(user: UserModel) {
+    return this.http.put<UserModel>(`${this.apiUrl}/${user.id}`, user);
+  }
+
   logOut() {
+    localStorage.removeItem('token');
     localStorage.removeItem('user');
   }
 
@@ -34,5 +41,9 @@ export class AuthService {
     } else {
       return false;
     }
+  }
+
+  getToken(){
+    return localStorage.getItem('token');
   }
 }

@@ -40,7 +40,8 @@ const routes: Routes = [
   },
   {
     path: 'add-product',
-    component: AddProductComponent
+    component: AddProductComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'home',

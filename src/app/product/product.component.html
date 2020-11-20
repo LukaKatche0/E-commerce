@@ -1,9 +1,18 @@
-<div style="display: flex; padding: 20px; width: 90%; margin: 100px auto;" *ngIf="product">
-    <div style="padding: 0 20px;">
-        <h1>{{product.title}}</h1>
-        <img class="product-img" [src]="product.images[0]" alt="">
+<div style="padding: 20px; width: 90%; margin: 100px auto;" *ngIf="product">
+    <div style="display: flex;">
+        <div style="padding: 0 20px; width: 60%;">
+            <h1>{{product.title}}</h1>
+            <ng-image-slider style="width: 100%;" [images]="imageObject" [imageSize]="imageSize" #nav>
+            </ng-image-slider>
+        </div>
+        <div style="padding-top: 50px; width: 40%;">
+            <h2 #productPrice>{{product.price}} GEL</h2>
+            <p>{{product.description}}</p>
+        </div>
     </div>
-    <div style="padding-top: 50px;">
-        <p>{{product.description}}</p>
+    <div style="padding: 0 20px;">
+        <p>by: {{product.username}}</p>
+        <p>contact number: {{product.userPhoneNumber}}</p>
+        <button mat-raised-button color="primary" (click)="buyProduct()">Buy Item</button>
     </div>
 </div>

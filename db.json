@@ -1,12 +1,39 @@
 {
   "products": [
+    {
+      "title": "Shoe",
+      "price": 100,
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.\n\n",
+      "images": [
+        "https://salming.com/media/a1bpnf2a/1289067-0907_1_greyhound_men_yellow_blue.png?v=637030310914299183&mode=crop&cropmode=percentage&width=720&height=720&format=webp&bgcolor=f6f6f6&quality=80",
+        "https://images.ctfassets.net/od02wyo8cgm5/5kpFyd0r2uP97j7TIwahLc/49be548876c61e93ac58efab04906d5f/cloud_waterproof_2-fw19-black_lunar-w-g1.png"
+      ],
+      "username": "luka",
+      "userPhoneNumber": "5999391926",
+      "id": 1
+    }
   ],
   "users": [
     {
-      "username": "luka`",
+      "username": "luka",
       "password": "1234",
-      "balance": 0,
+      "phoneNumber": "5999391926",
+      "balance": 101,
       "id": 1
+    },
+    {
+      "username": "luka",
+      "password": "1234",
+      "phoneNumber": "599931926",
+      "balance": 0,
+      "id": 2
+    },
+    {
+      "username": "luka",
+      "password": "1234",
+      "phoneNumber": "599939126",
+      "balance": 1,
+      "id": 3
     }
   ]
 }
