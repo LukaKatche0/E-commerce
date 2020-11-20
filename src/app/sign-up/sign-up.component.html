@@ -13,7 +13,7 @@
             <mat-error *ngIf="signUpForm.get('password').invalid">password is required</mat-error>
         </mat-form-field>
     </div>
-    <button mat-raised-button color="primary" type="button" style="margin-bottom: 10px;" (click)="addHobby()">Add Hobby</button>
+    <!-- <button mat-raised-button color="primary" type="button" style="margin-bottom: 10px;" (click)="addHobby()">Add Hobby</button>
     <div formArrayName="hobbies">
         <div *ngFor="let hobbyControl of getHobbiesControls(); let i = index;">
             <mat-form-field appearance="fill">
@@ -21,7 +21,7 @@
                 <input matInput type="text" [formControlName]="i">
             </mat-form-field>
         </div>
-    </div>
+    </div> -->
     <div>
         <button mat-raised-button color="primary">Sign Up</button>
     </div>

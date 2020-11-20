@@ -14,6 +14,10 @@ export class ProductService {
     return this.http.post<ProductPreviewModel>(this.api_url, product);
   }
 
+  getProductById(id: number | string) {
+    return this.http.get<ProductPreviewModel>(`${this.api_url}/${id}`);
+  }
+
   getProducts() {
     return this.http.get<Array<ProductPreviewModel>>(this.api_url);
   }

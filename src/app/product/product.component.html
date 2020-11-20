@@ -1,1 +1,9 @@
-<p>product {{productId}} works!</p>
+<div style="display: flex; padding: 20px; width: 90%; margin: 100px auto;" *ngIf="product">
+    <div style="padding: 0 20px;">
+        <h1>{{product.title}}</h1>
+        <img class="product-img" [src]="product.images[0]" alt="">
+    </div>
+    <div style="padding-top: 50px;">
+        <p>{{product.description}}</p>
+    </div>
+</div>

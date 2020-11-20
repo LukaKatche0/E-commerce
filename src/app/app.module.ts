@@ -25,6 +25,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { AddProductComponent } from './add-product/add-product.component';
 import { MatIconModule } from '@angular/material/icon';
+import { ​​​​​MatMenuModule }​​​​​ from'@angular/material/menu';
+import { MatToolbarModule } from '@angular/material/toolbar';
 @NgModule({
   declarations: [
     AppComponent,
@@ -53,7 +55,9 @@ import { MatIconModule } from '@angular/material/icon';
     ReactiveFormsModule,
     MatCardModule,
     HttpClientModule,
-    MatIconModule
+    MatIconModule,
+    MatToolbarModule,
+    ​​​​​MatMenuModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

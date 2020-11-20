@@ -6,7 +6,7 @@
     <img mat-card-image [src]="productPreview.images[0]">
     <mat-card-content>
         <p>
-           {{productPreview.description}}
+           {{productPreview.description | truncate}}
         </p>
     </mat-card-content>
     <mat-card-actions>

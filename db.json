@@ -1,13 +1,11 @@
 {
   "products": [
+  ],
+  "users": [
     {
-      "title": "asdasd",
-      "price": 124,
-      "description": "asdvsfasgag",
-      "images": [
-        "asaddasdwda",
-        "asdasdsadasdada"
-      ],
+      "username": "luka`",
+      "password": "1234",
+      "balance": 0,
       "id": 1
     }
   ]

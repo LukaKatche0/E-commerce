@@ -1,10 +1,145 @@
-<nav style="display: flex; justify-content: space-between;">
-    <a [routerLink]="['home']" routerLinkActive="active">Home</a>
-    <a [routerLink]="['categories']" routerLinkActive="active">Categories</a>
-    <a [routerLink]="['about']" routerLinkActive="active">About</a>
-    <a [routerLink]="['contact']" routerLinkActive="active">Contact</a>
-    <a [routerLink]="['login']" routerLinkActive="active">Login</a>
+<nav style=" justify-content: space-between;">
+
+    <p>
+        <mat-toolbar color="primary">
+            <button mat-button [matMenuTriggerFor]="categories">
+                <mat-icon routerLinkActive="active">menu</mat-icon>
+            </button>
+            <mat-menu #categories="matMenu">
+
+                <button mat-menu-item [matMenuTriggerFor]="computerTecnology">ტექნიკა</button>
+
+                <button mat-menu-item [matMenuTriggerFor]="clothing">ტანსაცმელი</button>
+
+            </mat-menu>
+
+
+
+            <mat-menu #computerTecnology="matMenu">
+
+                <button mat-menu-item [matMenuTriggerFor]="mobileTecnic">მობილური ტექნიკა</button>
+
+                <button mat-menu-item [matMenuTriggerFor]="computersComponents">კომპიუტერები, მაკომპლექტებლები</button>
+
+                <button mat-menu-item [matMenuTriggerFor]="audioVideoPhotoTecnic">აუდიო, ვიდეო, ფოტო ტექნიკა</button>
+
+                <button mat-menu-item [matMenuTriggerFor]="homeTecnic">საოჯახო ტექნიკა</button>
+
+                <button mat-menu-item [matMenuTriggerFor]="electronicTools">ელექტრო ხელსაწყოები</button>
+
+            </mat-menu>
+
+
+
+            <mat-menu #clothing="matMenu">
+
+                <button mat-menu-item>ყოველდღიური ტანსაცმელი</button>
+
+                <button mat-menu-item>სპორტული ტანსაცმელი</button>
+
+                <button mat-menu-item>კლასიკური ტანსაცმელი</button>
+
+            </mat-menu>
+
+
+
+            <mat-menu #mobileTecnic="matMenu">
+
+                <button mat-menu-item [routerLink]="['mobilePhones']">მობილურები</button>
+
+                <button mat-menu-item>სმარტ საათები</button>
+
+                <button mat-menu-item>IP ტელეფონები</button>
+
+                <button mat-menu-item>Bamboo shark</button>
+
+                <button mat-menu-item>Banded killifish</button>
+
+            </mat-menu>
+
+
+
+            <mat-menu #computersComponents="matMenu">
+
+                <button mat-menu-item>Sonoran desert toad</button>
+
+                <button mat-menu-item>Western toad</button>
+
+                <button mat-menu-item>Arroyo toad</button>
+
+                <button mat-menu-item>Yosemite toad</button>
+
+            </mat-menu>
+
+
+
+            <mat-menu #audioVideoPhotoTecnic="matMenu">
+
+                <button mat-menu-item>Banded Day Gecko</button>
+
+                <button mat-menu-item>Banded Gila Monster</button>
+
+                <button mat-menu-item>Black Tree Monitor</button>
+
+                <button mat-menu-item>Blue Spiny Lizard</button>
+
+                <button mat-menu-item disabled>Velociraptor</button>
+
+            </mat-menu>
+
+            <mat-menu #homeTecnic="matMenu">
+
+                <button mat-menu-item>Banded Day Gecko</button>
+
+                <button mat-menu-item>Banded Gila Monster</button>
+
+                <button mat-menu-item>Black Tree Monitor</button>
+
+                <button mat-menu-item>Blue Spiny Lizard</button>
+
+                <button mat-menu-item disabled>Velociraptor</button>
+
+            </mat-menu>
+
+            <mat-menu #electronicTools="matMenu">
+
+                <button mat-menu-item>Banded Day Gecko</button>
+
+                <button mat-menu-item>Banded Gila Monster</button>
+
+                <button mat-menu-item>Black Tree Monitor</button>
+
+                <button mat-menu-item>Blue Spiny Lizard</button>
+
+                <button mat-menu-item disabled>Velociraptor</button>
+
+            </mat-menu>
+
+            <span class="example-spacer"></span>
+
+            <button mat-button [routerLink]="['home']" routerLinkActive="active" class="navButtonColor">Home</button>
+            <button mat-button [routerLink]="['categories']" routerLinkActive="active"
+                class="navButtonColor">Categories</button>
+            <button mat-button [routerLink]="['about']" routerLinkActive="active" class="navButtonColor">About</button>
+            <button mat-button [routerLink]="['contact']" routerLinkActive="active"
+                class="navButtonColor">Contact</button>
+
+
+            <span class="example-spacer"></span>
+
+            <!-- <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+                <mat-icon>favorite</mat-icon>
+            </button>
+            <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+                <mat-icon>share</mat-icon>
+            </button> -->
+            <button mat-raised-button color="warn" class="loginbutton" [routerLink]="['login']"
+                routerLinkActive="active">Log In</button>
+            <button mat-raised-button color="warn" class="signupbutton" [routerLink]="['signup']"
+                routerLinkActive="active">Sign Up</button>
+
+
+        </mat-toolbar>
+    </p>
+
 </nav>
-<!-- 
-შევქმნათ ახალი guard, რომელიც იფუნქციონირებს login-ის route-ზე, თუ user დალოგინებულია
-მაგ შემთხვევაში გადაიყვანს მთავარ ფეიჯზე, თუ არადა მაშინ დატოვებს. -->
